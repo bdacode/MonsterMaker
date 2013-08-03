@@ -1,0 +1,13 @@
+{
+    "Version": 0.1,
+    "Data": {
+        "goblin": {
+            "Name": "Goblin",
+            "Dex": 10
+        },
+        "golem": {
+            "Name": "Golem",
+            "Dex": 5
+        }
+    }
+}

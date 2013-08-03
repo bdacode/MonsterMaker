@@ -132,12 +132,28 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\Components\User.cpp" />
+    <ClCompile Include="..\Classes\Components\Player.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Library\Serializer.cpp" />
+    <ClCompile Include="..\Classes\Resources\Resource.cpp" />
+    <ClCompile Include="..\Classes\Scenes\GameScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\MainScene.cpp" />
+    <ClCompile Include="..\Classes\Scenes\StartScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\AppMacros.h" />
+    <ClInclude Include="..\Classes\Components\User.h" />
+    <ClInclude Include="..\Classes\Components\Player.h" />
+    <ClInclude Include="..\Classes\Extra\Temporary.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Library\Serializer.h" />
+    <ClInclude Include="..\Classes\Resources\Resource.h" />
+    <ClInclude Include="..\Classes\Scenes\GameScene.h" />
+    <ClInclude Include="..\Classes\Scenes\MainScene.h" />
+    <ClInclude Include="..\Classes\Scenes\StartScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
