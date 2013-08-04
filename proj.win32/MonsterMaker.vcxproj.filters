@@ -31,6 +31,9 @@
     <Filter Include="Classes\Scenes\Start">
       <UniqueIdentifier>{49ef5ab9-be71-4ab2-aa01-2b865c7d66d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Util">
+      <UniqueIdentifier>{db334c9c-9d3e-4146-9a23-82c7f366dde1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,14 +57,17 @@
     <ClCompile Include="..\Classes\Components\User.cpp">
       <Filter>Classes\Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Scenes\GameScene.cpp">
-      <Filter>Classes\Scenes\Game</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Scenes\MainScene.cpp">
       <Filter>Classes\Scenes\Main</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\StartScene.cpp">
       <Filter>Classes\Scenes\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\Game\GameScene.cpp">
+      <Filter>Classes\Scenes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Util\Util.cpp">
+      <Filter>Classes\Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,14 +98,17 @@
     <ClInclude Include="..\Classes\Extra\Temporary.h">
       <Filter>Classes\Extra</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Scenes\GameScene.h">
-      <Filter>Classes\Scenes\Game</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Scenes\MainScene.h">
       <Filter>Classes\Scenes\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\StartScene.h">
       <Filter>Classes\Scenes\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\Game\GameScene.h">
+      <Filter>Classes\Scenes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Util\Util.h">
+      <Filter>Classes\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

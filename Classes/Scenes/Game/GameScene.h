@@ -17,22 +17,24 @@
 *********************************************************************/
 
 namespace MonsterMaker{ namespace Scenes { namespace Game {
-	
+
 	/************************************************************************/
-	/* 씬 배치                                                                    
+	/* Game Scene Class                                                                
 	/************************************************************************/
+
 	class GameScene : public cocos2d::Scene{
 	public:
 		GameScene(){};
 		~GameScene(){};
 		bool init();
-	};
-
+	}; 
+	
 	CREATE_FUNC(GameScene);
 
 	/************************************************************************/
-	/* 게임 주축 레이어                                                                    
+	/* Game Layer Class will be delete                                                         
 	/************************************************************************/
+
 	class GameLayer : public cocos2d::Layer
 	{
 	public:
@@ -48,9 +50,19 @@ namespace MonsterMaker{ namespace Scenes { namespace Game {
 
 
 	/************************************************************************/
-	/* 달력 레이어                                                      
+	/* Calender Node Class
 	/************************************************************************/
+	
+	class CalendarNode : public cocos2d::Node{
+	public:
+		CalendarNode(){};
+		~CalendarNode(){};
+		bool init();
+		CREATE_FUNC(CalendarNode);
 
+	private:
+		cocos2d::LabelTTF * pYearLabel, *pMonthLabel , *pDayLabel,*pWeekLabel;	// 날짜 관련 레이블
+	};
 	
 
 }}}

@@ -1,7 +1,7 @@
 ﻿#include "Player.h"
 
 namespace MonsterMaker { namespace Components { namespace Players{
-	Player* g_Instance = NULL;
+	Player *g_Instance = NULL;
 
 	void Player::Serialize( CSJson::Value& root )
 	{
@@ -43,28 +43,28 @@ namespace MonsterMaker { namespace Components { namespace Players{
 
 	}
 
-	void Release()
-	{
-		delete g_Instance;
-		g_Instance = NULL;
-	}
+	//void Release()
+	//{
+	//	delete g_Instance;
+	//	g_Instance = NULL;
+	//}
 
-	Player* getInstance()
-	{
-		if ( g_Instance == NULL ) {
-			CCASSERT(g_Instance,"No Player Instance");
-			return NULL;
-		}
-		return g_Instance;
-	}
+	//Player* getInstance()
+	//{
+	//	if ( g_Instance == NULL ) {
+	//		CCASSERT(g_Instance,"No Player Instance");
+	//		return NULL;
+	//	}
+	//	return g_Instance;
+	//}
 
-	Player* getInstance(const Player &_player )
-	{
-		if ( g_Instance == NULL) {
-			g_Instance = new Player(_player);
-		}
-		return g_Instance;
-	}
+	//Player* getInstance(const Player &_player )
+	//{
+	//	if ( g_Instance == NULL) {
+	//		g_Instance = new Player(_player);
+	//	}
+	//	return g_Instance;
+	//}
 
 	
 }}}

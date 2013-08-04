@@ -1,7 +1,6 @@
 #ifndef __MAINSCENE_H__
 #define __MAINSCENE_H__
 
-
 #include "cocos2d.h"
 
 /********************************************************************

@@ -2,6 +2,7 @@
 #include "Resources/Resource.h"
 #include "Components/Player.h"	
 #include "GameScene.h"		// Next Scene
+#include "Util/Util.h"		// Util
 
 USING_NS_CC;
 
@@ -20,7 +21,6 @@ bool StartLayer::init()
 	CCLOG("Start Scene Initialize");
 
 	Size layerSize = CCDirector::getInstance()->getVisibleSize();
-	Point origin = CCDirector::getInstance()->getVisibleOrigin();
 	this->setContentSize(layerSize);
 
 
@@ -60,11 +60,11 @@ bool StartLayer::init()
 	/* 종료 버튼                                                                    
 	/************************************************************************/
 	MenuItemImage *closeItem = MenuItemImage::create("CloseNormal.png",	"CloseSelected.png",CC_CALLBACK_1(StartLayer::menuCloseCallback, this));
-	closeItem->setPosition(Point(origin.x + layerSize.width - closeItem->getContentSize().width/2 ,	origin.y + closeItem->getContentSize().height/2));
+	closeItem->setPosition(POS(layerSize.width - closeItem->getContentSize().width/2 ,closeItem->getContentSize().height/2));
 
 	// create menu, it's an autorelease object
 	Menu* menu = Menu::create(closeItem, NULL);
-	menu->setPosition(Point::ZERO);
+	menu->setPosition(POS(0,0));
 	this->addChild(menu, 1);
 
 
@@ -95,9 +95,11 @@ void StartLayer::menuConfirmCallback( cocos2d::Object* pSender )
 {
 	TextFieldTTF *pTarget = (TextFieldTTF*)this->getChildByTag(100);
 	// Player 객체 생성 및 값 대입
-	NPLAYER::Player newPlayer(pTarget->getString(),0);
-	CCLOG(NPLAYER::getInstance(newPlayer)->getName().c_str());
+	/*NPLAYER::Player newPlayer(pTarget->getString(),0);
+	CCLOG(NPLAYER::getInstance(newPlayer)->getName().c_str());*/
 
+	NPLAYER::g_Instance = new NPLAYER::Player(pTarget->getString(),0);
+	
 	auto *pNExtScene = Scenes::Game::create();
 	Director::getInstance()->replaceScene(pNExtScene);
 }

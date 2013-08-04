@@ -30,8 +30,6 @@ namespace MonsterMaker { namespace Components { namespace Users{
 		
 		~UserEntity();
 	private:
-	
-		UserEntity();
 		std::string m_sName;
 		uint64_t m_ID;
 

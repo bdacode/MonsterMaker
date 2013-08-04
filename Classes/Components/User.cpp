@@ -12,11 +12,6 @@ namespace MonsterMaker { namespace Components{ namespace Users{
 		m_sName = root.get("Name","NoName").asString();
 		m_ID = root.get("ID",0).asUInt64();
 	}
-	
-	UserEntity::UserEntity() : m_sName(""), m_ID(0)
-	{
-		
-	}
 
 	UserEntity::UserEntity( std::string _name, uint64_t _id ) : m_sName(_name), m_ID(_id)
 	{

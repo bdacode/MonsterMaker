@@ -1,13 +1,34 @@
 #include "GameScene.h"
 #include "Resources/Resource.h"
-#include "Components/Player.h"
-//#include "GameMenuNode.h"	// Game Menu Layer
-//#include "CalenderNode.h"	// Calender Node
-//#include "ResourceNode.h"	// Resource Node
+#include "Util/Util.h"
 
 USING_NS_CC;
 
 namespace MonsterMaker{ namespace Scenes { namespace Game{ 
+
+	bool GameScene::init()
+	{
+		if( Scene::init() )
+		{
+			CCLOG("Game Scene Initialize");
+
+			auto pLayer = GameLayer::create();
+			this->addChild(pLayer,0);
+			
+
+			// 달력 레이어 배치
+			auto pCalenderNode = CalendarNode::create();
+			this->addChild(pCalenderNode,1);
+			pCalenderNode->setAnchorPoint(Util::anchorLeftTop);
+			pCalenderNode->setPosition(Util::posLeftTop(10,10));
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 
 	bool GameLayer::init(){
 
@@ -78,18 +99,52 @@ namespace MonsterMaker{ namespace Scenes { namespace Game{
 		CCLOG("-- Menu Castle Call Back");
 	}
 
+	/************************************************************************/
+	/* ClanderLayer Implement                                                                    
+	/************************************************************************/
 
-	bool GameScene::init()
+	bool CalendarNode::init()	// 초기화
 	{
-		if( Scene::init() )
-		{
-			auto *pLayer = GameLayer::create();
-			this->addChild(pLayer);
+		if(Node::init()){
+			CCLOG("Calender Layer Initialize");
+			
+			// Set Size 
+			
+			Size layerSize = Size(140.0f,80.0f);
+			Point origin = Director::getInstance()->getVisibleOrigin();
+			this->setContentSize(layerSize);
+
+			// 배경 불러오기
+
+			CCLOG("Calender Node Load background");
+			Sprite *pBackground = Sprite::create(NSPRITE::Calender);
+			pBackground->setPosition(POS(layerSize.width/2,layerSize.height/2));
+			this->addChild(pBackground,0);
+
+
+			// 초기화
+			pYearLabel	= LabelTTF::create("100",		NFONT::MENU_FONT1,	FONT_SIZE(20));
+			pMonthLabel = LabelTTF::create("1",		NFONT::MENU_FONT1,	FONT_SIZE(20));
+			pDayLabel	= LabelTTF::create("1",		NFONT::MENU_FONT1,	FONT_SIZE(20));
+			pWeekLabel	= LabelTTF::create("월요일",	NFONT::MENU_FONT1,	FONT_SIZE(20));
+
+			// 위치지정
+			pYearLabel	->setPosition(POS(layerSize.width/2,		layerSize.height-15));
+			pMonthLabel	->setPosition(POS(layerSize.width*0.2,	layerSize.height*0.5));
+			pDayLabel	->setPosition(POS(layerSize.width*0.2,	layerSize.height*0.2));
+			pWeekLabel	->setPosition(POS(layerSize.width*0.7,	layerSize.height*0.4));
+
+			// 노드 추가
+			this->addChild(pYearLabel,1);
+			this->addChild(pMonthLabel,1);
+			this->addChild(pDayLabel,1);
+			this->addChild(pWeekLabel,1);
 
 			return true;
 		}
-		else
-		{
+
+		else{
+			CCLOG("Calender Super Node Initialize failed");
 			return false;
 		}
 	}

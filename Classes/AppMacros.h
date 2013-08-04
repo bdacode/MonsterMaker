@@ -58,7 +58,5 @@ static cocos2d::Size designResolutionSize = cocos2d::Size(800, 1280);
 #endif
 
 #define FONT_SIZE(Num)  (cocos2d::EGLView::getInstance()->getDesignResolutionSize().height / mediumResource.size.height * Num)
-#define POS(__x__,__y__) cocos2d::Point( origin.x + (float)(__x__), origin.y+ (float)(__y__) )
-
 
 #endif /* __APPMACROS_H__ */

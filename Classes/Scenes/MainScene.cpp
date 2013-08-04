@@ -1,6 +1,7 @@
 #include "MainScene.h"
 #include "StartScene.h"
 #include "Resources/Resource.h"
+#include "Util/Util.h"
 
 USING_NS_CC;
 
@@ -10,7 +11,9 @@ bool MainLayer::init()
 {
 	bool bRet = false;
 	do{
-	
+		Util::origin = Director::getInstance()->getVisibleOrigin();
+		Util::size = Director::getInstance()->getVisibleSize();
+
 	//************************************************************************/
 	//* Super Init First
 	//************************************************************************/
@@ -41,7 +44,7 @@ bool MainLayer::init()
 	// 메뉴 생성
 	Menu *pMenu = Menu::create(pNewGameItem,pLoadGameItem,NULL);
 	pMenu->alignItemsVerticallyWithPadding(10.0f); // 여백지정
-	pMenu->setPosition(winSize.width/2,winSize.height/2); // 메뉴 위치 화면 가운데 지정 
+	pMenu->setPosition(POS(winSize.width/2,winSize.height/2)); // 메뉴 위치 화면 가운데 지정 
 	CC_BREAK_IF(!pMenu);
 	this->addChild(pMenu,1); // 레이어에 메뉴 추가
 	
