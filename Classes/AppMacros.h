@@ -18,7 +18,7 @@
 #define ANDROID_RESOLUTION_320X480    0		// Galaxy S1		 small
 #define ANDROID_RESOLUTION_480X800    1		// Galaxy S2		 medium
 #define ANDROID_RESOLUTION_720X1280   2		// Galaxy S3		 large
-#define ANDROID_RESOLUTION_800X1280   3		// Galaxy Tab		 Xlarge
+//#define ANDROID_RESOLUTION_800X1280   3		// Galaxy Tab		 Xlarge
 
 // Iphone Base Resolution
 #define IPHONE_RESOLUTION_320X480	4		// Iphone1	
@@ -51,12 +51,11 @@ static cocos2d::CSize designResolutionSize = cocos2d::Size(320, 480);
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 800);
 #elif (TARGET_DESIGN_RESOLUTION_SIZE == ANDROID_RESOLUTION_720X1280)
 static cocos2d::Size designResolutionSize = cocos2d::Size(720, 1280);	
-#elif (TARGET_DESIGN_RESOLUTION_SIZE == ANDROID_RESOLUTION_800X1280)			
-static cocos2d::Size designResolutionSize = cocos2d::Size(800, 1280);	
+//#elif (TARGET_DESIGN_RESOLUTION_SIZE == ANDROID_RESOLUTION_800X1280)			
+//static cocos2d::Size designResolutionSize = cocos2d::Size(800, 1280);	
 #else
 #error unknown target design resolution!
 #endif
 
-#define FONT_SIZE(Num)  (cocos2d::EGLView::getInstance()->getDesignResolutionSize().height / mediumResource.size.height * Num)
 
 #endif /* __APPMACROS_H__ */

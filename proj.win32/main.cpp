@@ -16,6 +16,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     AppDelegate app;
     EGLView* eglView = EGLView::getInstance();
     eglView->setViewName("MonsterMaker");
-    eglView->setFrameSize(480, 800);
+    //eglView->setFrameSize(380, 900);
+	eglView->setFrameSize(480, 800);
+	//eglView->setFrameZoomFactor(0.5f);
     return Application::getInstance()->run();
 }

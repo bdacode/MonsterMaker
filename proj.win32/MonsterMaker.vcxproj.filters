@@ -22,17 +22,17 @@
     <Filter Include="Classes\Extra">
       <UniqueIdentifier>{c36b078f-c399-47c5-a0d7-5b895041f703}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Scenes\Game">
-      <UniqueIdentifier>{e552f81a-e3f5-4f2b-90ee-fb43b81d8508}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Scenes\Main">
-      <UniqueIdentifier>{0f4bbd76-ceb3-4e5d-aeeb-2d2f7f1ac331}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Scenes\Start">
-      <UniqueIdentifier>{49ef5ab9-be71-4ab2-aa01-2b865c7d66d7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Util">
       <UniqueIdentifier>{db334c9c-9d3e-4146-9a23-82c7f366dde1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes\Games">
+      <UniqueIdentifier>{e552f81a-e3f5-4f2b-90ee-fb43b81d8508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes\Mains">
+      <UniqueIdentifier>{0f4bbd76-ceb3-4e5d-aeeb-2d2f7f1ac331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scenes\Starts">
+      <UniqueIdentifier>{49ef5ab9-be71-4ab2-aa01-2b865c7d66d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,13 +58,13 @@
       <Filter>Classes\Components</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\MainScene.cpp">
-      <Filter>Classes\Scenes\Main</Filter>
+      <Filter>Classes\Scenes\Mains</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\StartScene.cpp">
-      <Filter>Classes\Scenes\Start</Filter>
+      <Filter>Classes\Scenes\Starts</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\Game\GameScene.cpp">
-      <Filter>Classes\Scenes\Game</Filter>
+      <Filter>Classes\Scenes\Games</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Util\Util.cpp">
       <Filter>Classes\Util</Filter>
@@ -99,13 +99,13 @@
       <Filter>Classes\Extra</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\MainScene.h">
-      <Filter>Classes\Scenes\Main</Filter>
+      <Filter>Classes\Scenes\Mains</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\StartScene.h">
-      <Filter>Classes\Scenes\Start</Filter>
+      <Filter>Classes\Scenes\Starts</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\Game\GameScene.h">
-      <Filter>Classes\Scenes\Game</Filter>
+      <Filter>Classes\Scenes\Games</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Util\Util.h">
       <Filter>Classes\Util</Filter>

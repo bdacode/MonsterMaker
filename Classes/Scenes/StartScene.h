@@ -22,7 +22,7 @@
 	C Keyboard Notification Layer 로 바꾸기
 *********************************************************************/
 
-namespace MonsterMaker{ namespace Scenes{ namespace Start {
+namespace MonsterMaker{ namespace Scenes{ namespace Starts {
 	class StartLayer : public cocos2d::Layer
 	{
 	public:

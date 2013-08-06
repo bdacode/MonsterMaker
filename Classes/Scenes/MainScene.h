@@ -16,9 +16,9 @@
 				
 *********************************************************************/
 
-namespace MonsterMaker{ namespace Scenes{ namespace Main {
+namespace MonsterMaker{ namespace Scenes{ namespace Mains {
 
-	class MainLayer : public cocos2d::Layer
+	class MainLayer : public cocos2d::LayerColor
 	{
 	public:
 		virtual bool init();

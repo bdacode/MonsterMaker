@@ -1,12 +1,12 @@
 ﻿#include "StartScene.h"
 #include "Resources/Resource.h"
 #include "Components/Player.h"	
-#include "GameScene.h"		// Next Scene
+#include "Game/GameScene.h"		// Next Scene
 #include "Util/Util.h"		// Util
 
 USING_NS_CC;
 
-namespace MonsterMaker { namespace Scenes{ namespace Start{
+namespace MonsterMaker { namespace Scenes{ namespace Starts{
 
 /************************************************************************/
 /* Start Layer                                                                    
@@ -33,14 +33,13 @@ bool StartLayer::init()
 	this->addChild(title,1);
 	
 	
-	
-	// Name Input UI
+	// "이름을 입력해주세요" 레이블
 	LabelTTF *pText1 = LabelTTF::create(NUITEXT::InputName,NFONT::MENU_FONT1,FONT_SIZE(20));	//Text : Input Your name
 	pText1->setPosition(POS(layerSize.width/2,500));
 	CC_BREAK_IF(!pText1);
 	this->addChild(pText1,1);
 
-	// Text Input Layer            
+	// 텍스트 입력하는 곳
 	TextFieldTTF *textField = TextFieldTTF::textFieldWithPlaceHolder("Text Input !", Size(200, 25), Label::HAlignment::CENTER, NFONT::MENU_FONT1, 12);
 	textField->setPosition(POS(layerSize.width/2,400));
 	this->addChild(textField,1,100);
@@ -64,7 +63,7 @@ bool StartLayer::init()
 
 	// create menu, it's an autorelease object
 	Menu* menu = Menu::create(closeItem, NULL);
-	menu->setPosition(POS(0,0));
+	menu->setPosition(Point::ZERO);
 	this->addChild(menu, 1);
 
 
@@ -82,7 +81,7 @@ bool StartLayer::init()
 	return bRet;
 }
 
-void StartLayer::menuCloseCallback( cocos2d::Object* pSender )
+void StartLayer::menuCloseCallback( cocos2d::Object* pSender ) // 종료
 {
 	cocos2d::Director::getInstance()->end();
 
@@ -91,16 +90,14 @@ void StartLayer::menuCloseCallback( cocos2d::Object* pSender )
 #endif
 }
 
-void StartLayer::menuConfirmCallback( cocos2d::Object* pSender )
+void StartLayer::menuConfirmCallback( cocos2d::Object* pSender ) // 이름 입력 완료
 {
 	TextFieldTTF *pTarget = (TextFieldTTF*)this->getChildByTag(100);
-	// Player 객체 생성 및 값 대입
-	/*NPLAYER::Player newPlayer(pTarget->getString(),0);
-	CCLOG(NPLAYER::getInstance(newPlayer)->getName().c_str());*/
-
-	NPLAYER::g_Instance = new NPLAYER::Player(pTarget->getString(),0);
 	
-	auto *pNExtScene = Scenes::Game::create();
+	// Player 객체 생성 및 값 대입
+	NPLAYER::gInstance = new NPLAYER::Player(pTarget->getString(),0);
+	
+	auto *pNExtScene = Scenes::Games::create();
 	Director::getInstance()->replaceScene(pNExtScene);
 }
 

@@ -1,7 +1,7 @@
 ﻿#include "Player.h"
 
 namespace MonsterMaker { namespace Components { namespace Players{
-	Player *g_Instance = NULL;
+	Player *gInstance = NULL;
 
 	void Player::Serialize( CSJson::Value& root )
 	{

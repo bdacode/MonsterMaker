@@ -33,7 +33,7 @@ namespace MonsterMaker { namespace Components { namespace Players{
 			uint16_t m_iHeart;		// 하트
 		};
 
-	extern Player *g_Instance;
+	extern Player *gInstance;
 	//Player* getInstance();
 	//Player* getInstance(const Player &_player);
 	//void Release();
